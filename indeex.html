@@ -1,0 +1,379 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Amei Personalizados</title>
+<meta name="description" content="Amei Personalizados - Produtos personalizados com qualidade e delicadeza. Canecas, Camisas, Garrafas e muito mais.">
+<meta name="keywords" content="personalizados, presentes, canecas, camisas, brindes, Amei Personalizados">
+<meta name="author" content="Amei Personalizados">
+<link rel="icon" href="favicon.png" type="image/png">
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
+
+<style>
+  :root {
+    --rosa-bebe: #ffd6e8;
+    --rosa-principal: #ff7aa8;
+    --rosa-detalhe: #ffbcd1;
+    --cinza-fundo: #fdfdfd;
+    --cinza-texto: #444;
+    --cinza-borda: #eee;
+    --verde-whatsapp: #25D366;
+  }
+
+  * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+
+  html {
+    scroll-behavior: smooth;
+  }
+
+  body {
+    font-family: 'Poppins', sans-serif;
+    background-color: var(--cinza-fundo);
+    color: var(--cinza-texto);
+    line-height: 1.6;
+    -webkit-font-smoothing: antialiased;
+  }
+
+  header {
+    text-align: center;
+    padding: 3rem 1rem 2rem;
+    background: linear-gradient(180deg, var(--rosa-bebe) 0%, #fff 100%);
+    border-bottom: 1px solid var(--cinza-borda);
+    box-shadow: 0 2px 10px rgba(255, 122, 168, 0.1);
+  }
+
+  header img {
+    height: 180px;
+    margin-bottom: 0.8rem;
+  }
+
+  header h1 {
+    font-weight: 500;
+    font-size: 1.8rem;
+    letter-spacing: 1px;
+    color: #222;
+  }
+
+  header p {
+    color: #666;
+    font-weight: 300;
+  }
+
+  nav {
+    text-align: center;
+    padding: 1rem;
+    position: sticky;
+    top: 0;
+    background-color: rgba(255, 255, 255, 0.8);
+    backdrop-filter: blur(10px);
+    border-bottom: 1px solid var(--rosa-bebe);
+    z-index: 999;
+  }
+
+  nav a {
+    margin: 0 1rem;
+    text-decoration: none;
+    color: #333;
+    font-weight: 500;
+    transition: color 0.3s ease;
+  }
+
+  nav a:hover {
+    color: var(--rosa-principal);
+  }
+
+  section#produtos {
+    max-width: 1200px;
+    margin: 4rem auto;
+    padding: 0 1rem;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 2rem;
+  }
+
+  .product {
+    background-color: white;
+    border-radius: 14px;
+    border: 1px solid var(--rosa-bebe);
+    overflow: hidden;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    text-align: center;
+  }
+
+  .product:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 12px 24px rgba(255, 122, 168, 0.1);
+  }
+
+  .product img {
+    width: 100%;
+    height: 280px;
+    object-fit: cover;
+    transition: transform 0.4s ease;
+  }
+
+  .product:hover img {
+    transform: scale(1.05);
+  }
+
+  .product h2 {
+    font-size: 1.2rem;
+    color: var(--rosa-principal);
+    margin: 1rem 0 0.4rem;
+  }
+
+  .product .preco {
+    font-size: 1.1rem;
+    font-weight: 500;
+    color: var(--rosa-principal);
+    margin-bottom: 0.8rem;
+    background: rgba(255, 214, 232, 0.3);
+    display: inline-block;
+    padding: 0.3rem 1rem;
+    border-radius: 50px;
+    box-shadow: 0 2px 8px rgba(255, 122, 168, 0.1);
+  }
+
+  .btn-whatsapp {
+    display: inline-block;
+    margin-bottom: 1.5rem;
+    padding: 0.7rem 1.6rem;
+    background-color: var(--rosa-principal);
+    color: white;
+    text-decoration: none;
+    border-radius: 50px;
+    font-weight: 500;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 10px rgba(255, 90, 140, 0.15);
+  }
+
+  .btn-whatsapp:hover {
+    background-color: var(--rosa-detalhe);
+    transform: scale(1.08);
+    box-shadow: 0 6px 16px rgba(255, 90, 140, 0.2);
+  }
+
+  section#sobre {
+    max-width: 900px;
+    margin: 4rem auto;
+    text-align: center;
+    padding: 3rem 2rem;
+    border-radius: 14px;
+    background: linear-gradient(180deg, #fff 0%, var(--rosa-bebe) 100%);
+  }
+
+  #sobre h2 {
+    color: var(--rosa-principal);
+    margin-bottom: 1rem;
+  }
+
+  #sobre p {
+    color: #555;
+    font-weight: 300;
+    max-width: 700px;
+    margin: 0 auto;
+  }
+
+  section#contato {
+    text-align: center;
+    padding: 4rem 2rem;
+    background: linear-gradient(180deg, #fff 0%, var(--rosa-bebe) 100%);
+    border-top: 1px solid var(--rosa-bebe);
+  }
+
+  #contato h2 {
+    color: var(--rosa-principal);
+    margin-bottom: 1rem;
+  }
+
+  #contato p {
+    color: #555;
+    margin-bottom: 1.5rem;
+  }
+
+  .contato-links {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 1rem;
+  }
+
+  .btn-contato {
+    display: inline-block;
+    padding: 0.7rem 1.6rem;
+    border-radius: 50px;
+    background-color: var(--rosa-principal);
+    color: white;
+    text-decoration: none;
+    font-weight: 500;
+    transition: all 0.3s ease;
+  }
+
+  .btn-contato:hover {
+    background-color: var(--rosa-detalhe);
+    transform: scale(1.05);
+  }
+
+  footer {
+    text-align: center;
+    padding: 2rem;
+    border-top: 1px solid var(--rosa-bebe);
+    color: #777;
+    font-size: 0.9rem;
+    background-color: #fff;
+  }
+
+  .whatsapp-float,
+  .instagram-float {
+    position: fixed;
+    width: 55px;
+    height: 55px;
+    right: 20px;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    box-shadow: 2px 2px 5px rgba(0,0,0,0.2);
+    z-index: 1000;
+  }
+
+  .whatsapp-float {
+    bottom: 20px;
+    background-color: var(--verde-whatsapp);
+  }
+
+  .instagram-float {
+    bottom: 90px;
+    background: linear-gradient(45deg, #feda75, #fa7e1e, #d62976, #962fbf, #4f5bd5);
+  }
+
+  .whatsapp-float img {
+    width: 65px;
+    height: 65px;
+  }
+
+  .instagram-float img {
+    width: 37px;
+    height: 37px;
+  }
+
+  @media (max-width: 600px) {
+    header h1 { font-size: 1.5rem; }
+    .product img { height: 220px; }
+  }
+</style>
+</head>
+
+<body>
+
+<header>
+  <img src="logo.png" alt="Amei Personalizados">
+  <h1>Amei Personalizados</h1>
+  <p>Delicadeza em cada detalhe 💕</p>
+</header>
+
+<nav>
+  <a href="#produtos">Produtos</a>
+  <a href="#sobre">Sobre</a>
+  <a href="#contato">Contato</a>
+</nav>
+
+<section id="produtos">
+  <div class="product">
+    <img src="caneca linda.png" alt="Caneca Personalizada" loading="lazy">
+    <h2>Caneca Personalizada</h2>
+    <p class="preco">R$ 39,99</p>
+    <a class="btn-whatsapp" href="https://wa.me/5594988098876?text=Oi%2C%20amei%20a%20Caneca%20Personalizada!%20👀" target="_blank">Eu Amei 💗</a>
+  </div>
+
+  <div class="product">
+    <img src="camisa sol.jpg" alt="Camisa Personalizada" loading="lazy">
+    <h2>Camisa Personalizada</h2>
+    <p class="preco">R$ 39,99</p>
+    <a class="btn-whatsapp" href="https://wa.me/5594988098876?text=Oi%2C%20amei%20a%20Camisa%20Personalizada!%20👀" target="_blank">Eu Amei 💗</a>
+  </div>
+
+  <div class="product">
+    <img src="garrafa.png" alt="Garrafa Personalizada" loading="lazy">
+    <h2>Garrafa Personalizada</h2>
+    <p class="preco">R$ 159,99</p>
+    <a class="btn-whatsapp" href="https://wa.me/5594988098876?text=Oi%2C%20amei%20a%20Garrafa%20Personalizada!%20👀" target="_blank">Eu Amei 💗</a>
+  </div>
+
+  <div class="product">
+    <img src="balinha.png" alt="Balinha Personalizada" loading="lazy">
+    <h2>Balinha Personalizada</h2>
+    <p class="preco">R$ 0,99</p>
+    <a class="btn-whatsapp" href="https://wa.me/5594988098876?text=Oi%2C%20amei%20a%20Balinha%20Personalizada!%20👀" target="_blank">Eu Amei 💗</a>
+  </div>
+
+  <div class="product">
+    <img src="sacolinha ana.jpg" alt="Sacolinha Personalizada" loading="lazy">
+    <h2>Sacolinha Personalizada</h2>
+    <p class="preco">R$ 3,99</p>
+    <a class="btn-whatsapp" href="https://wa.me/5594988098876?text=Oi%2C%20amei%20a%20Sacolinha%20Personalizada!%20👀" target="_blank">Eu Amei 💗</a>
+  </div>
+
+  <div class="product">
+    <img src="calendario.png" alt="Calendário Personalizado" loading="lazy">
+    <h2>Calendário Personalizado</h2>
+    <p class="preco">R$ 29,99</p>
+    <a class="btn-whatsapp" href="https://wa.me/5594988098876?text=Oi%2C%20amei%20o%20Calendário%20Personalizado!%20👀" target="_blank">Eu Amei 💗</a>
+  </div>
+
+  <div class="product">
+    <img src="mae.jpg" alt="Arte para Redes Sociais" loading="lazy">
+    <h2>Arte para Redes Sociais</h2>
+    <p class="preco">R$ 29,99</p>
+    <a class="btn-whatsapp" href="https://wa.me/5594988098876?text=Oi%2C%20amei%20a%20Arte%20para%20Redes%20Sociais!%20👀" target="_blank">Eu Amei 💗</a>
+  </div>
+
+  <div class="product">
+    <img src="king of chiken.jpg" alt="Identidade Visual" loading="lazy">
+    <h2>Identidade Visual</h2>
+    <p class="preco">R$ 29,99</p>
+    <a class="btn-whatsapp" href="https://wa.me/5594988098876?text=Oi%2C%20amei%20a%20Identidade%20Visual!%20👀" target="_blank">Eu Amei 💗</a>
+  </div>
+
+  <div class="product">
+    <img src="funk.jpg" alt="Flyer Digital" loading="lazy">
+    <h2>Flyer Digital</h2>
+    <p class="preco">R$ 29,99</p>
+    <a class="btn-whatsapp" href="https://wa.me/5594988098876?text=Oi%2C%20amei%20o%20Flyer%20Digital!%20👀" target="_blank">Eu Amei 💗</a>
+  </div>
+</section>
+
+<section id="sobre">
+  <h2>Sobre Nós</h2>
+  <p>A Amei Personalizados nasceu da paixão por transformar ideias em lembranças encantadoras. Trabalhamos com carinho em cada detalhe para criar produtos únicos, cheios de amor e personalidade. 💗</p>
+</section>
+
+<section id="contato">
+  <h2>Fale Conosco</h2>
+  <p>Quer um orçamento, tirar dúvidas ou apenas dizer oi? 💬<br>Estamos sempre por aqui com um sorriso no rosto 💕</p>
+  <div class="contato-links">
+    <a href="https://wa.me/5594988098876" target="_blank" class="btn-contato">WhatsApp 💗</a>
+    <a href="https://www.instagram.com/amei_personalizados_mab" target="_blank" class="btn-contato">Instagram 🌷</a>
+  </div>
+</section>
+
+<a href="https://wa.me/5594988098876" class="whatsapp-float" target="_blank" rel="noopener noreferrer">
+  <img src="whatsapp.webp" alt="WhatsApp">
+</a>
+
+<a href="https://www.instagram.com/amei_personalizados_mab" class="instagram-float" target="_blank" rel="noopener noreferrer">
+  <img src="https://cdn-icons-png.flaticon.com/512/2111/2111463.png" alt="Instagram">
+</a>
+
+<footer>
+  &copy; 2025 Amei Personalizados — Com amor e criatividade 💖<br>
+  <small>Feito com carinho, embalado com amor 💌</small>
+</footer>
+
+</body>
+</html>
